@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Admin panel</title>
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/styles.css">
+  <script>
+    let tokenn = window.localStorage.getItem('token')
+    if(!tokenn) {
+        window.location = '/login'
+    }
+</script>
+</head>
+<body>
+
+  <header class="header">
+    <nav class="nav container">
+      <span class="logo">
+        Kasblar
+      </span>
+      <form class="form-inline w-50">
+        <input list="datalist" id="search" class="form-control w-50 form-control-sm" type="search" placeholder="Search" aria-label="Search">
+        <datalist id="datalist"></datalist>
+        <button  class="btn ml-2 btn-sm btn-outline-success" type="submit">Qidiruv</button>
+      </form>
+      <div class="nav-link__box d-flex">
+        <a href="/admin" class="nav__link mr-5">Loyiha haqida</a>
+        <a href="/admin" class="nav__link">Yordam</a>
+      </div>
+    </nav>
+  </header>
+
+<main class="main">
+  <section class="admin-form my-5 py-5 container">
+    <form>
+      <div class="form-row">
+        <div class="form-group mx-auto col-md-10 h5">
+          <label for="inputEmail4">Kasb Nomi</label>
+          <input type="email" class="form-control form-control-lg" id="job_name">
+        </div>
+        <div class="form-group mx-auto col-md-10 h5">
+          <label for="inputPassword4">Haqida</label>
+          <textarea class="p-2" name="" id="job_about" rows="6"></textarea>
+        </div>
+      </div>
+      <div class="img_upload w-75 mx-auto text-center my-5">
+        <input class="text-primary" id="file" type="file">
+      </div>
+      <div class="form-row admin__adv-dis mx-auto">
+        <div class="form-group col-md-6 pr-4 text-center h5 text-success">
+          <label for="inputEmail4">Yaxshi tomonlari</label>
+          <textarea class="p-2" name="" id="job_good" rows="4"></textarea>
+        </div>
+        <div class="form-group col-md-6 pl-4 text-center h5 text-danger">
+          <label for="inputPassword4">Yomon tomonlari</label>
+          <textarea class="p-2" name="" id="job_bad" rows="4"></textarea>
+        </div>
+      </div>
+      <div>
+        <h4 style="margin-left: 87px; margin-top: 10px;">Bu kasbni o'rganish mumkin bo'lgan joy</h4>
+        <textarea name="" id="advert" rows="3" style="font-size: 20px; padding: 10px; margin-left: 87px; margin-right: 87px; width: 940px;"></textarea>
+      </div>
+      <p id="errorP" style="margin-left: 390px; color: red; font-weight: 700; font-size: 18px; padding-bottom: 0px;"></p>
+      <div class="admin-btn__box mx-auto d-flex align-items-center justify-content-around mt-5">
+        <button type="button" id="deleteBtn" class="btn btn-danger">O'chirish</button>
+        <button type="button" id="cancelBtn" class="btn btn-warning">Bekor qil</button>
+        <button type="button" id="confirmBtn" class="btn btn-success">Tasdiqlash</button>
+      </div>
+    </form>
+  </section>
+</main>
+
+  <footer class="footer">
+    <div class="footer__container container d-flex align-items-center justify-content-between py-4">
+      <div class="footer__left d-flex flex-column ">
+        <span class="logo">
+          Logo
+        </span>
+        <span>
+          Copyright 2022
+        </span>
+      </div>
+      <div class="footer__right d-flex flex-column">
+        <span>
+          +998909998877
+        </span>
+        <span>
+          Created by Shahzod Shavkatov
+        </span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/jquery-3.6.0.min.js"></script>
+  <script src="js/bootstrap.bundle.min.js"></script>
+  <script src="js/main.js"></script>
+  <script src="renderJS/util.js"></script>
+  <script src="renderJS/admin.js"></script>
+</body>
+</html>
