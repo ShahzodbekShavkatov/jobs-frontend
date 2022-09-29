@@ -1,4 +1,4 @@
-const backendApi = 'http://localhost:3003'
+const backendApi = 'https://jobsbackendheroku.herokuapp.com'
 
 async function request (route, method, body) {
 
